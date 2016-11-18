@@ -1,6 +1,12 @@
-app:
-  build: .
-  ports:
-    - "127.0.0.1:4000:4000"
-  volumes:
-    - .:/usr/src/app
+version: "2"
+services:
+    app:
+        build: 
+            context: .
+            args:
+                - USER_NAME
+                - USER_ID
+        ports:
+            - "4000:4000"
+        volumes:
+            - .:/usr/local/src
